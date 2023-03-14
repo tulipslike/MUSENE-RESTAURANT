@@ -1,0 +1,281 @@
+@charset "UTF-8";
+@import url(reset.css);
+@import url(font.css);
+@import url(all.min.css);
+
+/*공통 스타일*/
+[class $= "inner"] {
+  width: auto;/*블록요소 폭 == 부모 폭*/
+  height: auto;
+  /*
+  "height: auto?" 기본(블록요소 높이 == 자식 높이)
+  (폭 == 자식) 만들수 있다.
+  폭? 플로트 or 포지션(절대, 고정)
+  */
+  
+  width: 1200px;/* 부모 X, 자식 X*/
+  height: 100%;/* 요소의 높이 == 부모 높이*/
+  margin: auto;/* 여백 나눔 (왼쪽 == 오른쪽)*/
+}
+
+/*1 header*/
+#header {
+  height: 100px;
+}
+#header .header-inner {
+/*  스타일 필요한 이유는? 포지션 기준이 필요해서*/
+  position: relative;
+}
+#header .logo {
+  text-align: center;
+  line-height: 100px
+}
+#header .logo a {
+  color: #a50000
+}
+
+#header .contact {
+  position: absolute;
+  left: 0;
+  bottom: 10px;
+  font-family: "NanumB"
+}
+#header .contact span {
+  background: #43952a;
+  color: #fff;
+  padding: 5px 8px;
+  border-radius: 5px;
+  margin-left: 5px
+}
+
+#header .util {
+  position: absolute;
+  right: 0;
+  top: 10px;
+  font-size: small
+}
+#header .util .tnb {
+  float: left;
+}
+#header .util .tnb a {
+  float: left;
+  padding: 0 10px;
+  color: #777
+}
+#header .util .tnb a:hover {
+  color: inherit;/*상속받은 값*/
+}
+
+#header .util .lang {
+  float: right;
+  margin-left: 10px
+}
+#header .util .lang a {
+  border: 1px solid #ccc;
+  color: #333;
+  padding: 5px 15px;
+  border-radius: 3px
+}
+#header .util .lang a:hover {
+  background: #eee
+}
+
+/*2 gnb*/
+#gnb {
+  position: relative;
+  z-index: 1;
+  height: 50px;
+  background: 
+/*    linear-gradient(45deg, #d11010 ,#6f0000);*/
+    linear-gradient(#d11010 20%, #6f0000 80%);
+/*    linear-gradient(45deg, #d11010 5%, #6f0000 15%, #6f0000 75%, #d11010 80%);*/
+  box-shadow: 0 10px 20px rgba(0,0,0,0.7)
+}
+#gnb li {
+  float: left;
+  width: 14.2857%;
+  text-align: center;
+  line-height: 50px
+}
+#gnb li a {
+  display: block;
+  font-size: 15px;
+  font-family: "NanumB";
+  color: #fff;
+  transition: all 0.2s
+}
+#gnb li a:hover {
+  background: #ffa700;
+  color: #000
+}
+
+/*3 비주얼*/
+#visual {
+  position: relative;
+  height: 800px;
+  background:  url(../img/main.png) no-repeat center center / cover;
+}
+#visual .text-box {
+ position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 20px;
+  padding: 50px 0;
+ background: rgba(0,0,0,0.5);
+}
+#visual h2 {
+  text-align: center;
+  color: #eee;
+}
+#visual strong {
+  display: block;
+  margin-top: 10px;
+  font-size: 46px;
+  line-height: 1;
+  color: #ffb100;
+  text-shadow: 5px 8px 0px rgba(0,0,0,0.7)
+}
+
+/*4 본문*/
+
+#main {
+  color: #222
+}
+#main .main-inner {
+  border-left: 1px solid #ccc;
+  border-right: 1px solid #ccc;
+  padding: 70px 50px;
+  box-sizing: border-box;
+}
+#main h2 {
+  margin-bottom: 30px;
+  color: #d11010;
+  background: url(../img/ico_steak.png) no-repeat;
+  padding-left: 50px;
+  font-size: 35px;
+  background-size: contain;
+}
+#main .pick-list {}
+#main .pick-list article {
+  float: left;
+  width: 31.3333%
+}
+#main .pick-list article:not(:last-child) {
+  margin-right: 3%;
+}
+
+#main .pick-list h3 {
+  margin-bottom: 15px;
+  padding-left: 10px;
+}
+#main .pick-list .thumb {
+  height: 200px;
+  background: lightgray no-repeat center center;
+  background-size: cover;
+  margin-bottom: 10px;
+}
+#main .pick-list:nth-child(1) .thumb {
+  background-image: url(../img/salad.jpg)
+}
+#main .pick-list:nth-child(2) .thumb {
+  background-image: url(../img/pasta.png)
+}
+#main .pick-list:nth-child(3) .thumb {
+  background-image: url(../img/steak.png)
+}
+#main .pick-list .desc {
+  padding: 0 5px;
+  font-size: 15px;
+  text-align: justify;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+}
+#main .pick-list .desc b {
+  display: block;
+  margin-bottom: 5px;
+  color: #1a6900;
+}
+#main article {
+  position: relative;
+}
+#main .detail-btn {
+  display: block;
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  background: #468432;
+  color: #fff;
+  font-size: small;
+}
+#main .detail-btn:hover {
+  background: #777;
+}
+
+/*5 푸터*/
+
+#footer {
+  height: 50px;
+  line-height: 50px;
+  background-image: linear-gradient(45deg, #111, #444)
+}
+#footer address {
+  float: left;
+  color: #eee;
+  font-size: small;
+}
+#footer address a {
+  color: #ffa700;
+  margin-right: 20px;
+  font-size: medium;
+  transition: all 0.1s
+}
+#footer address a:hover {
+  text-shadow: 0 0 10px rgba(255, 255, 255, 0.5)
+}
+
+#footer .sns {
+  float: right;
+  padding-top: 10px;
+}
+#footer .sns a {
+  display: block;
+  float: left;
+  padding: 0 10px;
+  color: #ccc;
+  font-size: 30px;
+  opacity: 0.5;
+  transition: all 0.2s
+  
+}
+#footer .sns a:hover {
+  opacity: 0.8;
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
